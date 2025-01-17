@@ -1,0 +1,40 @@
+.content .content__title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 4rem;
+    padding: 3rem 0rem 1.5rem 0rem;
+}
+.content .content__body {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto 13rem;
+    gap: 1rem;
+    justify-content: space-around;
+}
+.content .content__body .card {
+    width: 25rem;
+    height: 25rem;
+}
+.content .content__body .card img {
+    width: 25rem;
+    height: 12rem;
+    object-fit: cover;
+}
+.content__pagination {
+    padding: 2rem;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.content .content__body .article-image {
+    width: 25rem;
+    height: 25rem;
+    object-fit: cover;
+    text-align: center;
+}
+.list-category {
+    list-style: none;
+    padding: 0;
+}
