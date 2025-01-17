@@ -18,6 +18,7 @@ class ArticleRepository
         $article = Article::create($attrs);
         $categories = Category::whereIn('id', $attrs['categories'])->pluck('id');
         $article->categories()->attach($categories);
+        return $article;
     }
 
     public function update(array $attrs, Article $article)

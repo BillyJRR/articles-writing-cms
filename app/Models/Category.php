@@ -18,4 +18,9 @@ class Category extends Model
     {
         return $this->belongsToMany(Article::class);
     }
+
+    public function drafts()
+    {
+        return $this->belongsToMany(Draft::class);
+    }
 }
