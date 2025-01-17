@@ -20,7 +20,7 @@
             <tr>
                 <td>{{ ($drafts->currentPage() - 1) * $drafts->perPage() + $key + 1 }}</td>
                 <td>{{ $draft->title }}</td>
-                <td>{{ $draft->author?->name }}</td>
+                <td>{{ implode(', ', $draft->authors->pluck('name')->toArray()) }}</td>
                 <td>{{ substr($draft->body, 0, 100) }}...</td>
                 {{-- <td>
                     <input type="checkbox" class="btn-check" id="switchDefault-{{ $draft->id }}" onclick="updateStatusText({{ $draft->id }})" {{ isset($draft) ? ($draft->status == 1 ? 'checked' : '') : '' }}>

@@ -10,3 +10,8 @@ Fase 2
 
     En esta fase tuve que crear algunas tablas nuevas. Usé migraciones para generar la tabla drafts (borradores) y otra llamada draft_category para manejar la relación entre los borradores y las categorías. También preparé un seed para pasar la información de la tabla articles a drafts y a draft_category, asegurando que las categorías quedaran bien relacionadas.
     Además, creé el controlador, modelo, servicio, repositorio y request para drafts, agregando toda la lógica necesaria para manejar los borradores. Tuve que actualizar las rutas y crear nuevas vistas, incluyendo botones para gestionar todo lo relacionado con los borradores de manera sencilla.
+
+Fase 3
+
+    En esta fase creé dos tablas (article_author y draft_author) para gestionar las relaciones entre artículos, borradores y autores. También generé un seed que migra la información de las tablas articles y drafts, asegurando que los autores quedaran correctamente asociados.
+    Modifiqué los modelos para reflejar estas nuevas relaciones y también ajusté los requests, servicios, repositorios y controladores para que todo funcione bien con las nuevas estructuras. En las vistas, agregué un selector múltiple para los autores y actualicé el código para mostrar más de un autor cuando sea necesario.

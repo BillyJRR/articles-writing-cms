@@ -13,4 +13,14 @@ class Author extends Model
         'name',
         'slug',
     ];
+
+    public function articles()
+    {
+        return $this->belongsToMany(Article::class);
+    }
+
+    public function drafts()
+    {
+        return $this->belongsToMany(Draft::class);
+    }
 }

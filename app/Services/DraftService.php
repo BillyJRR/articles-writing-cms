@@ -53,7 +53,7 @@ class DraftService
 
     public function postDraft($draftId, $type)
     {
-        $draft = Draft::with('categories')->where('id', $draftId)->first()->toArray();
+        $draft = Draft::with('authors', 'categories')->where('id', $draftId)->first()->toArray();
         $draft['user_id'] = 1;
        
         $categoryIds = array_map(function ($category) {
@@ -61,6 +61,12 @@ class DraftService
         }, $draft['categories']);
 
         $draft['categories'] = $categoryIds;
+
+        $authorIds = array_map(function ($author) {
+            return $author['id'];
+        }, $draft['authors']);
+
+        $draft['authors'] = $authorIds;
 
         if ($type == 1) {
             $draft['status'] = 1;

@@ -35,4 +35,9 @@ class Article extends Model
     {
         return $this->belongsTo(Author::class, 'author_id');
     }
+
+    public function authors()
+    {
+        return $this->belongsToMany(Author::class, 'article_author');
+    }
 }

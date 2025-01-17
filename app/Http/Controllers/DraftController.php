@@ -21,7 +21,7 @@ class DraftController extends Controller
 
     public function datatable()
     {
-        $drafts = Draft::select('id', 'title', 'author_id', 'body', 'status')->with('author:id,name')->paginate(request('per_page', 10));
+        $drafts = Draft::select('id', 'title', 'author_id', 'body', 'status')->with('authors:id,name')->paginate(request('per_page', 10));
         
         return view('admin.draft.index', compact('drafts'));
     }
@@ -56,7 +56,6 @@ class DraftController extends Controller
 
     public function edit(Draft $draft)
     {
-        $draft = $draft->load('categories');
         $authors = Author::select('id', 'name')->get();
         $categories = Category::select('id', 'name')->get();
 

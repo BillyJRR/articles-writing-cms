@@ -20,12 +20,20 @@
             <label class="form-label" for="body">Descripción:</label>
             <textarea id="body" class="form-control" name="body">{{ $draft->body }}</textarea>
         </div>
-        <div class="col-md-6">
+        {{-- <div class="col-md-6">
             <label class="form-label" for="inputGroupSelect01">Autores</label>
             <select class="form-select" id="inputGroupSelect01" name="author_id" required>
                 <option selected disabled value="">Seleccione un autor</option>
                 @foreach($authors as $author)
                 <option option value={{ $author->id }} @if($author->id == $draft->author_id) selected @endif>{{ $author->name }}</option>
+                @endforeach
+            </select>
+        </div> --}}
+        <div class="col-md-6">
+            <label class="form-label" for="author">Autores</label>
+            <select class="form-select" id="author" multiple name="authors[]" required>
+                @foreach($authors as $author)
+                <option value="{{ $author->id }}" @if(in_array($author->id, $draft->authors->pluck('id')->toArray())) selected @endif>{{ $author->name }}</option>
                 @endforeach
             </select>
         </div>

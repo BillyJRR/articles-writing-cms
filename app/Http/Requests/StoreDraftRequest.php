@@ -24,7 +24,8 @@ class StoreDraftRequest extends FormRequest
         return [
             'title' => 'required|max:255',
             'slug' => 'required|unique:articles,slug|max:255',
-            'author_id' => 'required|exists:authors,id',
+            'authors' => 'required|array|min:1',
+            'authors.*' => 'exists:authors,id',
             'categories' => 'required|array|min:1',
             'categories.*' => 'exists:categories,id',
             'image' => 'nullable|image|mimes:png,jpg,jpeg,svg|max:2048',

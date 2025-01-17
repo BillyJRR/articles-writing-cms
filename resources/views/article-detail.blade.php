@@ -2,7 +2,7 @@
 @section('content')
 <div class="content">
     <h1 class="content__title"><u>{{ $detail->title }}</u></h1>
-    <h2 class="text-center">Autor: {{ $detail->author->name }}</h2>
+    <h2 class="text-center">Autor: {{ implode(', ', $detail->authors->pluck('name')->toArray()) }}</h2>
     <div class="text-center">
         <div class="d-flex gap-2 d-flex gap-2 justify-content-center">
             <h5>Categorías:</h5>
